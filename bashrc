@@ -46,14 +46,12 @@ set_bash_prompt(){
     PS1+="$(check_for_git_changes)"
     PS1+="$(parse_git_branch)"
   fi
-
-  PS1+="\n${COL_CURSOR}└─▶ "
   PS1+="${RESET}"
+  PS1+="\n└─▶ "
 }
 
-## Done, now just set the PS1 prompt :)
+# Done, now just set the PS1 prompt :)
 PROMPT_COMMAND=set_bash_prompt
-
 
 dc() {
   docker-compose "$@"
